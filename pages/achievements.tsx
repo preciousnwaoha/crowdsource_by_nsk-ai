@@ -7,7 +7,7 @@ import ProTip from '../src/components/ProTip';
 import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
 
-export default function Home() {
+export default function Achievements() {
   return (
     <>
     <header>
