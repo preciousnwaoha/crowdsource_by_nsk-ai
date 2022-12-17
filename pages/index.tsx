@@ -8,8 +8,15 @@ import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
 import Level from '../src/components/Level';
 import Tasks from '../src/components/Tasks/Tasks';
+import { getAllTasksData, taskType } from '../lib/tasks';
+import { GetStaticProps, } from 'next';
 
-export default function Home() {
+type propType = {
+ propsData : taskType[]
+}
+
+export default function Home({propsData }: propType) {
+  console.log( propsData)
   return (
     <>
       <Navbar />
@@ -18,18 +25,28 @@ export default function Home() {
     <Container maxWidth="lg" sx={{
       minHeight: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"},
       py: 2,
-      border: 1,
-      borderColor: "red",
     }}>
       <Level />
-      <Tasks />
+      <Tasks tasks={propsData}/>
     </Container>
     
     </main>
     <footer>
-      <Copyright />
+      {/* <Copyright /> */}
     </footer>
     
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  
+    const propsData = getAllTasksData()
+
+  
+    return {
+      props: {
+        propsData,
+      },
+    };
+};
