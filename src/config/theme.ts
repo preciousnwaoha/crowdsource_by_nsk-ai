@@ -25,6 +25,30 @@ const theme = createTheme({
   typography: {
     fontFamily: roboto.style.fontFamily,
   },
+
+  components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+        *, *::after, *::before {
+          -webkit-tap-highlight-color: transparent;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      `,
+    },
+    // MuiPaper: {
+    //   styleOverrides: {
+    //     // Name of the slot
+    //     root: {
+    //       // Some CSS
+    //       borderRadius: 8,
+    //     },
+    //   },
+    // }
+
+  }
 });
 
 export default theme;

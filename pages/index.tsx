@@ -6,33 +6,23 @@ import Link from '../src/components/Link';
 import ProTip from '../src/components/ProTip';
 import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
+import Level from '../src/components/Level';
+import Tasks from '../src/components/Tasks/Tasks';
 
 export default function Home() {
   return (
     <>
-    <header>
       <Navbar />
-    </header>
+    
     <main>
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        
-      </Box>
+    <Container maxWidth="lg" sx={{
+      minHeight: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"},
+      py: 2,
+      border: 1,
+      borderColor: "red",
+    }}>
+      <Level />
+      <Tasks />
     </Container>
     
     </main>

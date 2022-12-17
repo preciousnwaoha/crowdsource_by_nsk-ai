@@ -72,6 +72,7 @@ const NavBar = () => {
           //   borderColor: "rgba(0,0,0,0.12)",
           color: "rgba(0,0,0,0.44)",
           position: "relative",
+          
         }}
         elevation={6}
         
