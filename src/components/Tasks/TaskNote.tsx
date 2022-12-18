@@ -20,9 +20,13 @@ const TaskNote = ({task, onHandleClose}: propType) => {
 
     return <Paper variant="elevation" elevation={0} sx={{
         pt: 8,
+        pb: 9,
         // border: 1,
+        // borderColor: "red",
         position: "relative",
-        height: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"}
+        overflowY: "hidden",
+        height: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"},
+        maxHeight: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"}
     }}>
         
         
@@ -38,7 +42,8 @@ const TaskNote = ({task, onHandleClose}: propType) => {
         <Typography variant="h5" component="h2" sx={{
             fontSize: "1.125rem",
             px: 2,
-            py: 1.5,
+            pb: 1.5,
+            pt: 2,
             m:0,
         }}>
             {task.name}
@@ -47,10 +52,17 @@ const TaskNote = ({task, onHandleClose}: propType) => {
         <Box sx={{
             overflowY: "scroll",
             px: 3,
+            // border: 1,
+            height: "100%",
         }}>
             <Box sx={{
             position: "relative",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             width: "100%",
+            // border: 1,
+            height: {xs: "250px", sm: "300px", md: "300px"}
         }}>
             <Image src={task.imageSrc} alt={task.name} fill />
         </Box>

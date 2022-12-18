@@ -38,15 +38,16 @@ const theme = createTheme({
         }
       `,
     },
-    // MuiPaper: {
-    //   styleOverrides: {
-    //     // Name of the slot
-    //     root: {
-    //       // Some CSS
-    //       borderRadius: 8,
-    //     },
-    //   },
-    // }
+    MuiAppBar: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          background: "#fff",
+          color: "rgba(0,0,0,0.7)",
+        },
+      },
+    }
 
   }
 });

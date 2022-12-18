@@ -120,7 +120,7 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
                     py: 1.5,
 
                     "&:hover": {
-                        background: "red"
+                      background: "rgba(0,0,0,0.085)"
                     }
                 }}>
                     {page.icon}
@@ -152,7 +152,7 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
                     py: 1.5,
 
                     "&:hover": {
-                        background: "red"
+                        background: "rgba(0,0,0,0.085)"
                     }
                 }}>
                     {pageX.icon}

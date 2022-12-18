@@ -37,7 +37,7 @@ const Tasks = ({tasks}: propTypes) => {
               md={4}
             >
               {!task.completed && (
-                <Link href={`/task${task.link}`}>
+                <Link href={`/task/${task.link}`}>
                   <Paper
                     elevation={3}
                     sx={{

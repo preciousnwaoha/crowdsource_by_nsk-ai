@@ -12,6 +12,7 @@ import {tasks} from "../../src/utils/tasks"
 import { GetStaticProps, GetStaticPaths, } from 'next';
 import { getAllTaskIds, getTaskData, taskType } from '../../lib/tasks';
 import TaskNote from '../../src/components/Tasks/TaskNote';
+import Task from '../../src/components/Tasks/Task';
 
 
 type propType = {
@@ -21,7 +22,7 @@ type propType = {
 }
 
 export default function Home({propsData}: propType) {
-  const [openNote, setOpenSet] = useState(true)
+  const [openNote, setOpenSet] = useState(false)
   const handleCloseTaskNote = () => {
     setOpenSet(false)
   }
@@ -31,17 +32,20 @@ export default function Home({propsData}: propType) {
   }
   return (
     <>
-    <>
+    {!openNote && <>
       <Navbar />
     
       <main>
     
       
-    
+        <Task task={propsData.task} />
     
       </main>
-    </>
-    {openNote && <TaskNote task={propsData.task} onHandleClose={handleCloseTaskNote} />}
+    </>}
+    {openNote && <>
+      <Navbar />
+      <TaskNote task={propsData.task} onHandleClose={handleCloseTaskNote} />
+    </>}
     
     </>
   );

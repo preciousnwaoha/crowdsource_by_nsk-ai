@@ -67,14 +67,10 @@ const NavBar = () => {
     <React.Fragment>
       <AppBar
         sx={{
-          background: "white",
-          //   borderBottom: 1,
-          //   borderColor: "rgba(0,0,0,0.12)",
-          color: "rgba(0,0,0,0.44)",
           position: "relative",
           
         }}
-        elevation={6}
+        elevation={2}
         
       >
         <Toolbar
@@ -104,16 +100,17 @@ const NavBar = () => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
+              fontSize: "1.375rem",
               fontWeight: 400,
               textDecoration: "none",
-              color: "inherit",
+              // color: "inherit",
             }}
           >
             Crowdsource
           </Typography>
 
           <Box sx={{ flexGrow: 0, ml: 2 }}>
-            <Tooltip title="Open settings">
+            <Tooltip title="Open Account">
               <IconButton
                 onClick={handleOpenUserMenu}
                 sx={{ p: 1.5, fontSize: "1.25rem" }}

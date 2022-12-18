@@ -18,7 +18,7 @@ export const tasks: taskType[] = [
     {
         name: "Audio Donation",
         imageSrc: "https://ssl.gstatic.com/social/villagecrowdui/images/v13_task_illustration_caption-01.svg",
-        link: "/audio-donation",
+        link: "audio-donation",
         note: {
             title: "Help improve food search",
             noteItems: [
@@ -32,9 +32,9 @@ export const tasks: taskType[] = [
         completed: true,
       },
       {
-        name: "Audio Donation",
+        name: "Translation",
         imageSrc: "https://ssl.gstatic.com/social/villagecrowdui/images/v13_task_illustration_caption-01.svg",
-        link: "/correct1",
+        link: "translation",
         note: {
             title: "Help improve food search",
             noteItems: [
@@ -48,9 +48,9 @@ export const tasks: taskType[] = [
         completed: false,
       },
       {
-        name: "Audio Donation",
+        name: "Translation Validation",
         imageSrc: "https://ssl.gstatic.com/social/villagecrowdui/images/v13_task_illustration_caption-01.svg",
-        link: "/correct2",
+        link: "translation-validation",
         note: {
             title: "Help improve food search",
             noteItems: [
