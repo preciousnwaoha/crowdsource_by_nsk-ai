@@ -22,16 +22,9 @@ type propType ={
 }
 
 const Task = ({task}: propType) => {
-    // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-    const handleSkip = () => {
-        console.log("skip")
-    }
-
-    const handlePrev = () => {
-        console.log("skip")
-    }
+    
 
     const handleOpenMenu = (event: React.MouseEvent<HTMLElement>) => {
         setAnchorEl(event.currentTarget);
@@ -111,32 +104,6 @@ const Task = ({task}: propType) => {
         {task.link === "audio-donation" && <AudioDonation /> }
         
         
-        <Paper variant="outlined" sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            width: "100%",
-            p: 2,
-            outline: 0,
-            border: 0,
-            borderTop: 2,
-            borderColor: "rgba(0,0,0,0.075)",
-            
-            borderRadius: 0,
-        }}>
-            <Button variant="text" sx={{
-            textTransform: "none",
-        }} onClick={handlePrev} startIcon={<ChevronLeftOutlinedIcon />}>
-            Previous
-        </Button>
-        <Button variant="text" sx={{
-            textTransform: "none",
-        }} onClick={handleSkip} endIcon={<ChevronRightOutlinedIcon />}>
-            Skip
-        </Button>
-        </Paper>
         
 
     </Paper>
