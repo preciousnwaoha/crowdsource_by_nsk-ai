@@ -6,8 +6,16 @@ import Link from '../src/components/Link';
 import ProTip from '../src/components/ProTip';
 import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
+import LeaderboardList from '../src/components/Leaderboard/LeaderboardList';
+import LeaderboardIntro from '../src/components/Leaderboard/LeaderboardIntro';
 
 export default function Leaderboard() {
+  const [showIntro, setShowIntro] = React.useState(true)
+
+  const handleHideIntro = () => {
+    setShowIntro(false)
+  }
+
   return (
     <>
     <header>
@@ -15,29 +23,12 @@ export default function Leaderboard() {
     </header>
     <main>
     <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        
-      </Box>
+      {!showIntro && <LeaderboardList />}
+      {showIntro && <LeaderboardIntro />}
     </Container>
     
     </main>
     <footer>
-      <Copyright />
     </footer>
     
     </>
