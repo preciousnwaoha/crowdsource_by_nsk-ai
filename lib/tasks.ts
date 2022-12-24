@@ -93,3 +93,20 @@ export const getTaskData = (_paramsId: string) => {
 export const getAllTasksData = () => {
   return tasks;
 }
+
+export const taskTypeCodes = {
+  "translation": 1,
+  "translation-validation": 2,
+  "word-translation": 3,
+  "audio-validation": 4,
+  "audio-donation": 5,
+}
+
+export const ConvertTaskTypeToCode = (taskType: string): number => {
+  if (taskTypeCodes.hasOwnProperty(taskType)) {
+    return taskTypeCodes[taskType];
+  }
+
+  return 0
+}
+
