@@ -4,12 +4,9 @@ import { useRouter } from "next/router";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
-import List from '@mui/material/List';
+import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import IconButton from '@mui/material/IconButton';
 import Diversity1OutlinedIcon from '@mui/icons-material/Diversity1Outlined';
@@ -22,7 +19,6 @@ type propTypes = {
     pages: {
         text: string;
         link: string;
-        icon: JSX.Element;
     }[];
 }
 
@@ -72,7 +68,9 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
 
   const list = (anchor: anchorType) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250, }}
+      sx={{ 
+        width: anchor === 'top' || anchor === 'bottom' ? 'auto' : "90vw",
+      position: "relative", }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawerWithKey(anchor, false)}
@@ -95,75 +93,37 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
         </Box>
         <Divider />
         <Box sx={{
-            overflowY: "scroll",
-            // border: 1,
-            // borderColor: "red",
-            
+            pt: 3,
+            pr: 1,
         }}>
-            <Box sx={{
-        pt: 1,
-        mb: 1,
-      }}>
           {pages.map((page) => {
             return <Link key={page.text.replace(" ", "")} href={page.link} style={{
                 color: "inherit",
                 textDecoration: "none",
             }}>
-                <Box sx={{
+                    <Typography variant="body1" sx={{
                     display: "flex",
                     alignItems: "center",
                     px: 2,
                     py: 1.5,
+                    mb: "3px",
+                    fontWeight: 500,
+                    borderRadius: "0 1.5rem 1.5rem 0",
+                    color: "rgba(0,0,0,0.65)",
 
                     "&:hover": {
-                      background: "rgba(0,0,0,0.085)"
+                      background: "#f8f9fa",
+                      color: "black",
                     }
                 }}>
-                    {page.icon}
-                    <Typography variant="body2" sx={{
-                        ml: 1
-                    }}>
                     {page.text}
                     </Typography>
-                </Box>
                 
                 
           </Link>
           })}
           
-      </Box>
-      <Divider />
-      <Box sx={{
-        pt: 1
-      }}>
-          {pagesX.map((pageX) => {
-            return <Link key={pageX.text.replace(" ", "")} href={pageX.link} style={{
-                color: "inherit",
-                textDecoration: "none",
-            }}>
-                <Box sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    px: 2,
-                    py: 1.5,
-
-                    "&:hover": {
-                        background: "rgba(0,0,0,0.085)"
-                    }
-                }}>
-                    {pageX.icon}
-                    <Typography variant="body2" sx={{
-                        ml: 1
-                    }}>
-                    {pageX.text}
-                    </Typography>
-                </Box>
-                
-                
-          </Link>
-          })}
-          
-      </Box>
+      
         </Box>
         
     </Box>
@@ -179,7 +139,8 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
               aria-haspopup="true"
               onClick={toggleDrawer(anchor, true)}
               sx={{
-                p: 1.5
+                p: 1.5,
+                borderRadius: 1,
               }}
             >
               <MenuIcon />
@@ -190,6 +151,26 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
             onClose={toggleDrawer(anchor, false)}
           >
             {list(anchor)}
+
+            <Paper elevation={6} sx={{
+            p: 1,
+            width: "100%",
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+          }}>
+          
+
+            <Button fullWidth variant={"contained"} sx={{
+                textTransform: "none",
+                py: 1,
+                display: {xs: "block", md: "none"},
+                fontSize: {xs: "1rem"},
+                fontWeight: 400,
+            }} >
+                Get started
+            </Button>
+          </Paper>
           </Drawer>
         </React.Fragment>
       

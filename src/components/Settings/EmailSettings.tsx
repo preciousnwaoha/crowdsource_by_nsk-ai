@@ -38,7 +38,7 @@ const [recieveEmailsOn, setRecieveEmailsOn] = React.useState(false);
     
     console.log("checked: ", checked)
     console.log("_code: ", _code)
-    console.log("e.target.value: ", e.target.value)
+    console.log("e.target.value: ", event.target.value)
     setEmailFilters(prevState => {
         return {
             ...prevState,
