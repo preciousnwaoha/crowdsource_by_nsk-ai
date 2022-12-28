@@ -10,6 +10,7 @@ import Level from '../src/components/Level';
 import Tasks from '../src/components/Tasks/Tasks';
 import { getAllTasksData, taskType } from '../lib/tasks';
 import { GetStaticProps, } from 'next';
+import WhyHelpMatters from '../src/components/Tasks/WhyHelpMatters';
 
 type propType = {
  propsData : taskType[]
@@ -27,6 +28,7 @@ export default function Home({propsData }: propType) {
       py: 2,
     }}>
       <Level />
+      {/* <WhyHelpMatters /> */}
       <Tasks tasks={propsData}/>
     </Container>
     

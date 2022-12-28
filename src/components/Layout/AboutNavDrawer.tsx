@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Diversity1OutlinedIcon from '@mui/icons-material/Diversity1Outlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import FeedbackOutlinedIcon from '@mui/icons-material/FeedbackOutlined';
+import Feedback from "../Feedback"
 
 type anchorType = "left" | "top" | "bottom" | "right"
 type propTypes = {
@@ -34,11 +35,6 @@ const pagesX = [
         link: "/help",
         icon: <HelpOutlineOutlinedIcon />,
       },
-      {
-        text: "Feedback",
-        link: "/feedback",
-        icon: <FeedbackOutlinedIcon />,
-      },
       
 ]
 
@@ -49,7 +45,11 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
     bottom: false,
     right: false,
   });
-  const router = useRouter();
+  const [openFeedback, setOpenFeedback] = React.useState(false);
+  
+  const handleOpenFeedback = () => {
+    setOpenFeedback(true)
+  }
 
 
   const toggleDrawer = (anchor: anchorType, open: boolean) => (event: React.MouseEvent<HTMLButtonElement | HTMLDivElement>) => {
@@ -122,7 +122,23 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
                 
           </Link>
           })}
-          
+          <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    px: 2,
+                    py: 1.5,
+
+                    "&:hover": {
+                      background: "rgba(0,0,0,0.085)"
+                    }
+                }} onClick={handleOpenFeedback}>
+                    <FeedbackOutlinedIcon />
+                    <Typography variant="body2" sx={{
+                        ml: 1
+                    }}>
+                    Feedback
+                    </Typography>
+                </Box>
       
         </Box>
         
@@ -160,8 +176,8 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
             left: 0,
           }}>
           
-
-            <Button fullWidth variant={"contained"} sx={{
+          <Link href={"/"}>
+          <Button fullWidth variant={"contained"} sx={{
                 textTransform: "none",
                 py: 1,
                 display: {xs: "block", md: "none"},
@@ -170,8 +186,11 @@ export default function NavDrawer({anchor="left", pages }: propTypes) {
             }} >
                 Get started
             </Button>
+          </Link>
+            
           </Paper>
           </Drawer>
+          { openFeedback && <Feedback onClose={() => {setOpenFeedback(false)}} />}
         </React.Fragment>
       
   );

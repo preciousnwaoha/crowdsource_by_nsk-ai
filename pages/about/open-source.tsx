@@ -38,10 +38,8 @@ export default function OpenSource() {
 
       <Typography variant="body1" sx={{
         fontWeight: 300,
-        textAlign: "center",
       }}>
-     Get to know some of our awesome influencers!
-     Lore
+     Here&apos;s a look at some of the Crowdsourced data that we’ve open sourced, so that the whole developer and research community can advance the state of the art of technology, with diversity in mind.
       </Typography>
 
       <Box sx={{

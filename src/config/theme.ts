@@ -36,6 +36,10 @@ const theme = createTheme({
           text-decoration: none;
           color: inherit;
         }
+        body: {
+          width: 100%;
+          border: 1px solid green;
+        }
       `,
     },
     MuiAppBar: {
@@ -46,6 +50,8 @@ const theme = createTheme({
           background: "#fff",
           color: "rgba(0,0,0,0.7)",
         },
+
+        
       },
     }
 

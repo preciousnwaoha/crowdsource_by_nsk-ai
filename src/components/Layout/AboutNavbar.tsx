@@ -95,6 +95,7 @@ const AboutNavBar = () => {
                 Get started
             </Button>
 
+            <Link href="/">
             <Button fullWidth variant={"contained"} sx={{
                 textTransform: "none",
                 py: 1,
@@ -104,6 +105,8 @@ const AboutNavBar = () => {
             }} >
                 Get started
             </Button>
+            </Link>
+            
           </Box>
 
             
