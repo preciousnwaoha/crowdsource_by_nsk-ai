@@ -10,14 +10,14 @@ const LeaderboardIntro = ( ) => {
 
   return (
     <Box component="section">
-      <Box sx={{
-        border: 1,
-        height: "150px",
-        my: 2,
+    {/*  <Box sx={{
+         border: 1,
+         height: "150px",
+         my: 2,
 
-      }}>
+    //   }}> */}
         {/* image */}
-      </Box>
+      {/* </Box> */}
       <Box>
       <Typography variant="body1" component="h2" sx={{
         fontWeight: 500,
@@ -31,14 +31,17 @@ const LeaderboardIntro = ( ) => {
       }}>
       Compete with contributors around the world! A preview of your profile will be visible to other contributors on each task-specific Leaderboard. Here&lsquo;s what they&lsquo;ll see:
       </Typography>
-      <Grid container spacing={2} sx={{
+      <Grid container  sx={{
+        // border: 1,
+        m: 0,
         mb: 2,
       }}>
-        <Grid item md={6} xs={12}>
+        <Grid item md={6}  xs={12}>
           <Button variant="outlined" sx={{
             textTransform: "none",
             width: "100%",
             py: 1.5,
+            mt: 2,
           }}>
             Not now
           </Button>
@@ -49,6 +52,7 @@ const LeaderboardIntro = ( ) => {
             textTransform: "none",
             width: "100%",
             py: 1.5,
+            mt: 2,
           }} >
             Join
           </Button>

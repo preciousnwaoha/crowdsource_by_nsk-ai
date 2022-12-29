@@ -28,7 +28,7 @@ export default function Home({propsData }: propType) {
       py: 2,
     }}>
       <Level />
-      {/* <WhyHelpMatters /> */}
+      <WhyHelpMatters />
       <Tasks tasks={propsData}/>
     </Container>
     

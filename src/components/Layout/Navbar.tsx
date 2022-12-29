@@ -68,7 +68,7 @@ const NavBar = () => {
       <AppBar
         sx={{
           position: "relative",
-          border: 1,
+          // border: 1,
         }}
         elevation={2}
         
@@ -76,20 +76,19 @@ const NavBar = () => {
         <Toolbar
             ref={appBarRef}
           sx={{
-            border: 1,
-            borderColor: "red",
+            // border: 1,
+            // borderColor: "red",
+            justifyContent: "space-between",
             px: 1,
           }}
         >
-          {/* Small Screens */}
 
-            <NavDrawer anchor="left" pages={pages} />
+          <Box sx={{
+            display: "flex",
+            alignItems: "center"
+          }}>
+          <NavDrawer anchor="left" pages={pages} />
           
-          {/* <AdbIcon
-            sx={{
-              display: { xs: "flex", md: "none" },
-            }}
-          /> */}
           <Typography
             variant="h5"
             noWrap
@@ -106,6 +105,8 @@ const NavBar = () => {
           >
             Crowdsource
           </Typography>
+          </Box>
+            
 
           <Box sx={{ ml: 2 }}>
             <Tooltip title="Open Account">
@@ -132,13 +133,13 @@ const NavBar = () => {
               }}
 
               sx={{
-                border: 1,
-                borderColor: "blue",
+                // border: 1,
+                // borderColor: "blue",
               }}
               PaperProps={{
                 sx: {
-                    border: 1,
-                    borderColor: "blue",
+                    // border: 1,
+                    // borderColor: "blue",
                     width: "calc(100% - 28px)",
                     maxWidth: "400px",
                     minHeight: "400px",
