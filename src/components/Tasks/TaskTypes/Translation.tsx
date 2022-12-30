@@ -9,7 +9,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from "@mui/material/TextField"
 import InputAdornment from "@mui/material/InputAdornment"
 import MenuItem from "@mui/material/MenuItem"
-import { Typography } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import SendIcon from "@mui/icons-material/Send"
 import ChevronLeftOutlinedIcon from '@mui/icons-material/ChevronLeftOutlined';
 import ChevronRightOutlinedIcon from '@mui/icons-material/ChevronRightOutlined';
@@ -45,9 +45,10 @@ const Translation = () => {
     const [translateCode, setTranslateCode] = useState(10)
     const [inputTranslation, setInputTranslation] = useState("")
 
-    const handleLangsChange = (event: SelectChangeEvent<number>) => {
-        console.log(event.target.value)
-        setTranslateCode(event.target.value);
+    const handleLangsChange = (event: SelectChangeEvent<number>, child: React.ReactNode) => {
+        
+        // console.log(event.target.value)
+        setTranslateCode(event.target.value as number) ;
       };
 
     const handleInputTranslationChange  = (e: React.ChangeEvent<HTMLInputElement>) => {

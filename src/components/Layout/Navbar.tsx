@@ -68,7 +68,7 @@ const NavBar = () => {
       <AppBar
         sx={{
           position: "relative",
-          
+          // border: 1,
         }}
         elevation={2}
         
@@ -78,19 +78,17 @@ const NavBar = () => {
           sx={{
             // border: 1,
             // borderColor: "red",
+            justifyContent: "space-between",
             px: 1,
           }}
         >
-          {/* Small Screens */}
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <NavDrawer anchor="left" pages={pages} />
-          </Box>
-          {/* <AdbIcon
-            sx={{
-              display: { xs: "flex", md: "none" },
-            }}
-          /> */}
+          <Box sx={{
+            display: "flex",
+            alignItems: "center"
+          }}>
+          <NavDrawer anchor="left" pages={pages} />
+          
           <Typography
             variant="h5"
             noWrap
@@ -99,7 +97,6 @@ const NavBar = () => {
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
-              flexGrow: 1,
               fontSize: "1.375rem",
               fontWeight: 400,
               textDecoration: "none",
@@ -108,8 +105,10 @@ const NavBar = () => {
           >
             Crowdsource
           </Typography>
+          </Box>
+            
 
-          <Box sx={{ flexGrow: 0, ml: 2 }}>
+          <Box sx={{ ml: 2 }}>
             <Tooltip title="Open Account">
               <IconButton
                 onClick={handleOpenUserMenu}
@@ -140,7 +139,7 @@ const NavBar = () => {
               PaperProps={{
                 sx: {
                     // border: 1,
-                    // borderColor: "red",
+                    // borderColor: "blue",
                     width: "calc(100% - 28px)",
                     maxWidth: "400px",
                     minHeight: "400px",

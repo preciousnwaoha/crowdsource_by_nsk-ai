@@ -86,9 +86,11 @@ const Tasks = ({tasks}: propTypes) => {
                     p: 2,
                     textAlign: "center",
                     overflow: "hidden",
+                    position: "relative",
                     cursor: "pointer",
                     "&:hover": {
                       background: grey[100],
+
                     },
                   }}
                   onClick={handleOpenTaskNotAvailable}
@@ -118,6 +120,30 @@ const Tasks = ({tasks}: propTypes) => {
                   >
                     {task.name}
                   </Typography>
+                  <Box sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    bgcolor: "rgba(256, 256, 256, 0.8)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}>
+                     <Typography
+                    variant="h4"
+                    sx={{
+                      fontSize: "1rem",
+                      fontWeight: 500,
+                      mt: 2,
+
+                    }}
+                  >
+                    {task.name}
+                  </Typography>
+
+                  </Box>
                 </Paper>
               )}
             </Grid>

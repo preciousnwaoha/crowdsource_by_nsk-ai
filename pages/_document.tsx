@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           <meta name="emotion-insertion-point" content="" />
           {(this.props as any).emotionStyleTags}
         </Head>
-        <body>
+        <body style={{ maxWidth: "100vw", overflow: "hidden"}}>
           <Main />
           <NextScript />
         </body>

@@ -57,7 +57,7 @@ const TranslationValidation = () => {
 
   const handleLangsChange = (event: SelectChangeEvent<number>) => {
     console.log(event.target.value);
-    setTranslateCode(event.target.value);
+    setTranslateCode(event.target.value as number);
   };
 
   const handleSkip = () => {
@@ -163,19 +163,26 @@ const TranslationValidation = () => {
               <Box>
               <FormControl>
                 <RadioGroup
-                  row
+                  row={true}
                   aria-labelledby="demo-form-control-label-placement"
                   name="position"
                   // defaultValue="top"
                   value={validityValue}
                   onChange={handleRadioChange}
-                  
+                  sx={{
+                    // border: 1,
+                    minWidth: "100px",
+                    justifyContent: "flex-end",
+                  }}
                 >
                   <FormControlLabel
                     value={"true"}
                     control={<Radio />}
                     label={<CheckIcon />}
                     labelPlacement="top"
+                    sx={{
+                      m: 0,
+                    }}
                   />
 
                   <FormControlLabel
@@ -183,6 +190,9 @@ const TranslationValidation = () => {
                     control={<Radio />}
                     label={<ClearIcon />}
                     labelPlacement="top"
+                    sx={{
+                      m: 0,
+                    }}
                   />
                 </RadioGroup>
               </FormControl>

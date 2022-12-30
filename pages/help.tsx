@@ -2,42 +2,34 @@ import * as React from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Link from '../src/components/Link';
-import ProTip from '../src/components/ProTip';
-import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
+
 
 export default function Help() {
   return (
     <>
-    <header>
       <Navbar />
-    </header>
+    
     <main>
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          my: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
-        <Typography variant="h4" component="h1" gutterBottom>
-          MUI v5 + Next.js with TypeScript example
-        </Typography>
-        <Link href="/about" color="secondary">
-          Go to the about page
-        </Link>
-        <ProTip />
-        
-      </Box>
+    <Container maxWidth="lg" sx={{
+      minHeight: {xs: "calc(100vh - 3.5rem)", md: "calc(100vh - 3.5rem)"},
+      py: 2,
+    }}>
+      
+      <Typography variant="h2" sx={{
+        fontWeight: 400,
+        fontSize: { xs: "1.85rem"},
+        py: 2,
+        textAlign: "center",
+        color: "primary.main",
+      }}>
+      How can we help you?
+      </Typography>
+    
     </Container>
     
     </main>
     <footer>
-      <Copyright />
     </footer>
     
     </>
