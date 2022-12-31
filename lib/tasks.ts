@@ -103,10 +103,19 @@ export const taskTypeCodes = {
 }
 
 export const ConvertTaskTypeToCode = (taskType: string): number => {
-  if (taskTypeCodes.hasOwnProperty(taskType)) {
-    return taskTypeCodes[taskType];
+  switch (taskType ) {
+    case "translation":
+      return 1;
+    case "translation-validation":
+      return 2;
+    case "word-translation":
+      return 3;
+    case "audio-validation":
+      return 4;
+    case "audio-donation":
+      return 5;
+    default:
+      return 0;
   }
-
-  return 0
 }
 
