@@ -4,25 +4,27 @@ import FactCheckOutlinedIcon from '@mui/icons-material/FactCheckOutlined';
 import HeadphonesOutlinedIcon from '@mui/icons-material/HeadphonesOutlined';
 import MicOutlinedIcon from '@mui/icons-material/MicOutlined';
 import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
-import { tasks } from "../../utils/tasks";
-
-
-const taskIcons = {
-    "audio-validation": <HeadphonesOutlinedIcon color="primary" />,
-  "audio-donation": <MicOutlinedIcon color="primary" />,
-  "translation": <TranslateOutlinedIcon color="primary" />,
-  "translation-validation": <FactCheckOutlinedIcon color="primary" />,
-  "word-translation": <TranslateOutlinedIcon color="primary" />,
-}
 
 type propTypes = {
     taskId: string,
 }
 
 const TaskIcon = ({taskId}: propTypes) => {
-    if (taskIcons.hasOwnProperty(taskId)) {
-        return taskIcons[taskId]
-    } 
+    if (taskId === "audio-validation") {
+        return <HeadphonesOutlinedIcon color="primary" />
+    }
+    else if (taskId === "audio-donation") {
+        return <MicOutlinedIcon color="primary" />
+    }
+    else if (taskId === "translation") {
+        return <TranslateOutlinedIcon color="primary" />
+    }
+    else if (taskId === "translation-validation") {
+        return <FactCheckOutlinedIcon color="primary" />
+    }
+    else if (taskId === "word-translation") {
+        return  <TranslateOutlinedIcon color="primary" />
+    }
 
     return <CircleOutlinedIcon />
 }
