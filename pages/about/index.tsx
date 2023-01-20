@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Image from "next/image"
 import Link from "next/link"
 import Container from '@mui/material/Container';
@@ -6,8 +6,6 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import Button from '@mui/material/Button';
-// import Box from '@mui/material/Box';
-
 import HelpIcon from '@mui/icons-material/Help';
 import AboutNavbar from "../../src/components/Layout/AboutNavbar"
 import Community1 from "../../public/images/about/community-1.jpg"

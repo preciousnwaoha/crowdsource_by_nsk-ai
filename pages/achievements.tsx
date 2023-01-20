@@ -1,5 +1,4 @@
-import * as React from 'react';
-import Container from '@mui/material/Container';
+import React from 'react';
 import Navbar from "../src/components/Layout/Navbar"
 import AchievementsTabs from '../src/components/Achievements/AchievementsTabs';
 

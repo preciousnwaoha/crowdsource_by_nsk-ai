@@ -1,14 +1,5 @@
 import React, {useState} from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../../src/components/Link';
-import ProTip from '../../src/components/ProTip';
-import Copyright from '../../src/components/Copyright';
-import Navbar from "../../src/components/Layout/Navbar"
-import Level from '../../src/components/Level';
-import Tasks from '../../src/components/Tasks/Tasks';
-import {tasks} from "../../src/utils/tasks"
+import Navbar from "../../src/components/Layout/Navbar";
 import { GetStaticProps, GetStaticPaths, } from 'next';
 import { getAllTaskIds, getTaskData, taskType } from '../../lib/tasks';
 import TaskNote from '../../src/components/Tasks/TaskNote';
@@ -51,7 +42,7 @@ export default function Home({propsData}: propType) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
   const paths = getAllTaskIds()
 
   return {
@@ -60,7 +51,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = ({ params }) => {
   console.log("params", params);
   
     const propsData = getTaskData(params?.id as string)

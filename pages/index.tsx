@@ -1,10 +1,5 @@
-import * as React from 'react';
+import React from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../src/components/Link';
-import ProTip from '../src/components/ProTip';
-import Copyright from '../src/components/Copyright';
 import Navbar from "../src/components/Layout/Navbar"
 import Level from '../src/components/Level';
 import Tasks from '../src/components/Tasks/Tasks';
@@ -41,7 +36,7 @@ export default function Home({propsData }: propType) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = () => {
   
     const propsData = getAllTasksData()
 

@@ -1,13 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import Link from '../../src/components/Link';
-import ProTip from '../../src/components/ProTip';
-import Copyright from '../../src/components/Copyright';
 import Navbar from "../../src/components/Layout/Navbar"
 import LeaderboardListWrapper from '../../src/components/Leaderboard/LeaderboardLIstWrapper';
-import LeaderboardIntro from '../../src/components/Leaderboard/LeaderboardIntro';
 import { GetStaticProps, GetStaticPaths, } from 'next';
 import { getAllTaskIds, getTaskData, taskType } from '../../lib/tasks';
 
@@ -42,7 +36,7 @@ export default function LeaderboardOfTask({propsData}: propType) {
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths: GetStaticPaths = () => {
     const paths = getAllTaskIds()
   
     return {
@@ -51,7 +45,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
   };
   
-  export const getStaticProps: GetStaticProps = async ({ params }) => {
+  export const getStaticProps: GetStaticProps = ({ params }) => {
     console.log("params", params);
     
       const propsData = getTaskData(params?.id as string)

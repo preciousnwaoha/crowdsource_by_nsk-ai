@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import Container from '@mui/material/Container';
 import Navbar from "../src/components/Layout/Navbar"
 import InvitationTabs from '../src/components/Invitation/InvitationTabs';
